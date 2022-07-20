@@ -1,0 +1,2 @@
+class DataSourseError(Exception):
+    pass
