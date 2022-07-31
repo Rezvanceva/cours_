@@ -5,14 +5,14 @@ from typing import List, Any
 
 import substring as substring
 
-from post import Post
+from bp_posts.dao.post import Post
 from exceptions.data_exceptions import DataSourseError
 from pprint import pprint as pp
 
 
 class PostDAO:
 
-    def __init__(self, path):
+    def __init__(self, path: object) -> object:
         self.path = path
 
     # загружает список из файла и создает на его основе класс
@@ -29,7 +29,7 @@ class PostDAO:
 
     @property
     def _load_posts(self):
-        # возвращает список экзеиляров Post
+        # возвращает список экземпляров Post
 
         posts_data = self._load_data()
         list_of_posts = [Post(**post_data) for post_data in posts_data]
@@ -54,7 +54,7 @@ class PostDAO:
                 return post
 
 
-    def search_in_context(self, substring):
+    def search_in_content(self, substring):
 
     # поиск постов где в контенте есть substring
         if type(substring) != str:
