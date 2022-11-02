@@ -4,3 +4,4 @@
 [2022-07-26 14:09:08,434] DEBUG [api_logger.api_posts_all:31] Запрошены все посты
 [2022-07-26 14:10:35,194] DEBUG [api_logger.api_posts_single:41] Обращение к несуществующему посту 235
 [2022-07-26 14:10:35,194] ERROR [api_logger.page_error_404:49] Ошибка 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+[2022-10-29 22:56:21,622] DEBUG [api_logger.api_posts_all:33] Р—Р°РїСЂРѕС€РµРЅС‹ РІСЃРµ РїРѕСЃС‚С‹

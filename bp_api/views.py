@@ -2,6 +2,8 @@ import logging
 
 from flask import Blueprint, jsonify, abort
 
+from db import db
+
 bp_api = Blueprint("bp_api", __name__)
 
 from bp_posts.dao.comment import Comment
@@ -44,7 +46,20 @@ def api_posts_single(pk: int):
 
     return jsonify(post.as_dict()), 200
 
+@bp_api.route('/test_db')
+def test_db():
+    result = db.session.execute(
+        'SELECT 1'
+    ).scalar()
+
+    return jsonify(
+        {
+            'result': result,
+        }
+    )
+
 @bp_api.errorhandler(404)
 def page_error_404(error):
     api_logger.error(f"Ошибка {error}")
     return jsonify({"error": str(error)}), 404
+
