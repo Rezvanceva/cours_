@@ -9,7 +9,7 @@ services:
     environment:
       - DB_PASSWORD=db_password
       - DB_USER=db_user
-      - DB_DB=db_name
+      - DB_NAME=db_name
   db:
     image: postgres
     environment:
